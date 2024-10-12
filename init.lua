@@ -29,7 +29,16 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "lua" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },  
+        })
+    end}
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
