@@ -40,7 +40,10 @@ require("lazy").setup({
 -- Use default cappuccin themee
 vim.cmd.colorscheme "catppuccin"
 
+-- Load telescope
 local builtin = require('telescope.builtin')
+
+-- Use common keymaps forr telescope
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
