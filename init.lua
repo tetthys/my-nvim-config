@@ -33,6 +33,3 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
-
--- Use a keymap for neo-tree
-vim.keymap.set('n', '<C-b>', ':Neotree filesystem reveal left<CR>')
