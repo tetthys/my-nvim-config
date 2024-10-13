@@ -34,9 +34,6 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
--- Use default cappuccin themee
-vim.cmd.colorscheme "catppuccin"
-
 -- Load telescope
 local builtin = require('telescope.builtin')
 
