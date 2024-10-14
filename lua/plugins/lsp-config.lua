@@ -12,5 +12,14 @@ return {
 	    ensure_installed = { "lua_ls" },
 	}
     end
+},
+{
+    "neovim/nvim-lspconfig",
+    config = function()
+	local lspconfig = require("lspconfig")
+	lspconfig.lua_ls.setup({})
+	vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action ,{})
+	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+    end
 }
 }
