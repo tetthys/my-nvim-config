@@ -1,3 +1,9 @@
+-- Make tab key 4 spaces (https://www.reddit.com/r/neovim/comments/10tshmx/how_do_i_make_tab_indent_4_spaces_in_lazyvim_and/)
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
