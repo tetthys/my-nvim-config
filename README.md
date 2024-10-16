@@ -31,3 +31,7 @@ Try [this tutorial](https://docs.docker.com/engine/install/ubuntu/).
 - integration with markdown
 - integration with docker
 - integration with php
+
+# Versions used when writing this markdown
+
+Neovim with v0.10.2
