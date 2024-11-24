@@ -1,3 +1,5 @@
+-- Place this in ~/.config/nvim
+
 -- Make tab key 4 spaces (https://www.reddit.com/r/neovim/comments/10tshmx/how_do_i_make_tab_indent_4_spaces_in_lazyvim_and/)
 vim.o.tabstop = 4
 vim.o.expandtab = true
