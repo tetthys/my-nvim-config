@@ -7,7 +7,6 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
-		-- (Ctr + b) is 'Toggle Sidebar visibility' in vscodev
-		vim.keymap.set("n", "<C-b>", ":Neotree filesystem reveal left<CR>")
+		vim.keymap.set("n", "<F2>", ":Neotree filesystem reveal left<CR>")
 	end,
 }
