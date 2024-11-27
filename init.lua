@@ -30,7 +30,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Custom snippets
-vim.api.nvim_set_keymap('n', '<F1>', ':split|terminal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<F1>', ':belowright split | terminal<CR>', { noremap = true, silent = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
