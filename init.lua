@@ -31,6 +31,7 @@ vim.g.maplocalleader = "\\"
 
 -- Custom neovim snippets
 vim.api.nvim_set_keymap('n', '<F1>', ':belowright split | terminal<CR>', { noremap = true, silent = true }) -- make terminal
+vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })
