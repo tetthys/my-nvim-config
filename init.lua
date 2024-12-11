@@ -29,8 +29,11 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Custom snippets
-vim.api.nvim_set_keymap('n', '<F1>', ':belowright split | terminal<CR>', { noremap = true, silent = true })
+-- Custom neovim snippets
+vim.api.nvim_set_keymap('n', '<F1>', ':belowright split | terminal<CR>', { noremap = true, silent = true }) -- make terminal
+vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
