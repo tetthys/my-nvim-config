@@ -12,7 +12,7 @@ return {
                 null_ls.builtins.completion.spell,
                 require("none-ls.diagnostics.eslint_d"),
                 null_ls.builtins.formatting.prettier,
-                null_ls.builtins.diagnostics.phpcs, -- php
+                null_ls.builtins.diagnostics.phpcs,
                 null_ls.builtins.formatting.phpcsfixer,
             },
         })
