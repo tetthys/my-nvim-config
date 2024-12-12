@@ -9,17 +9,17 @@ vim.o.shiftwidth = 4
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-    if vim.v.shell_error ~= 0 then
-        vim.api.nvim_echo({
-            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out,                            "WarningMsg" },
-            { "\nPress any key to exit..." },
-        }, true, {})
-        vim.fn.getchar()
-        os.exit(1)
-    end
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -35,16 +35,21 @@ vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>wq", ":wq<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>qa", ":qa<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-a>", "ggVG", { noremap = true, silent = true }) -- Select all
+vim.keymap.set("v", "<C-c>", '"+y', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-v>", '"+p', { noremap = true, silent = true })
+vim.keymap.set("v", "<C-x>", '"+d', { noremap = true, silent = true })
+vim.keymap.set("n", "<C-z>", "u", { noremap = true, silent = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
-    spec = {
-        -- import your plugins
-        { import = "plugins" },
-    },
-    -- Configure any other settings here. See the documentation for more details.
-    -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "habamax" } },
-    -- automatically check for plugin updates
-    checker = { enabled = true },
+	spec = {
+		-- import your plugins
+		{ import = "plugins" },
+	},
+	-- Configure any other settings here. See the documentation for more details.
+	-- colorscheme that will be used when installing plugins.
+	install = { colorscheme = { "habamax" } },
+	-- automatically check for plugin updates
+	checker = { enabled = true },
 })
